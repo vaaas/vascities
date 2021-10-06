@@ -1,6 +1,8 @@
-const fs = require('fs')
-import Vue from './libs/Vue.js'
-import Main from './libs/Main.js'
+self.fs = require('fs')
+self.vue = require('@vue/runtime-core')
+import Main from './components/Main.vue'
+
+self.Vue = Vue
 
 window.onload = main
 

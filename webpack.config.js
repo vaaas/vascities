@@ -1,4 +1,4 @@
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const loader = require('vue-loader')
 module.exports = {
     module: {
         rules: [
@@ -9,6 +9,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new VueLoaderPlugin()
-    ]
+        new loader.VueLoaderPlugin()
+    ],
+    resolve: {
+        fallback: {
+            'fs': false,
+        },
+    },
 }
