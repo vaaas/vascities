@@ -63,7 +63,7 @@
                 if (this.system === 'linux')
                     return path.join(os.homedir(), '.local', 'share', 'vascities')
                 else
-                    return path.join(os.homedir(), 'vascities')
+                    return path.join(os.homedir(), 'AppData', 'Local', 'vascities')
             },
 
             system() {
