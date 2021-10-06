@@ -1,9 +1,13 @@
 {
-  "devDependencies": {
-    "@vue/compiler-sfc": "^3.2.19",
-    "vue-loader": "^16.8.1",
-    "webpack": "^5.57.1",
-    "webpack-cli": "^4.8.0"
-    "vue": "^3.2.19"
-  },
+    "devDependencies": {
+        "laravel-mix": "^6.0.31",
+        "vue": "^3.2.19",
+        "vue-loader": "^16.8.1",
+        "webpack-cli": "^4.8.0"
+    },
+    "scripts": {
+        "build": "node node_modules/laravel-mix/bin/cli.js build",
+        "watch": "node node_modules/laravel-mix/bin/cli.js watch",
+        "run": "ELECTRON_ENABLE_LOGGING=1 electron --debug index.js"
+    }
 }

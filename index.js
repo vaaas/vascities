@@ -6,10 +6,11 @@ function main() {
         width: 800,
         height: 600,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
+            preload: path.join(__dirname, 'dist', 'main.js'),
+            nodeIntegration: true,
         },
     })
-
+    // win.removeMenu()
     win.loadFile('index.html')
 }
 

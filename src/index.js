@@ -1,11 +1,11 @@
-self.fs = require('fs')
-self.vue = require('@vue/runtime-core')
-import Main from './components/Main.vue'
+self.fs = window.require('fs')
+self.os = window.require('os')
+self.path = window.require('path')
 
-self.Vue = Vue
+self.Vue = require('vue')
+require('./helpers.js')
 
-window.onload = main
-
-function main() {
-    Vue.createApp(Main).mount('body')
+window.onload = function() {
+    const main = require('./components/Main.vue')
+    Vue.createApp(main.default).mount('#app')
 }
