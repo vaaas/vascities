@@ -1,7 +1,7 @@
 <template>
     <DefaultWrapper>
         <h1>It looks like you have no sites. Would you like to make one?</h1>
-        <MyButton label='Yes' variant='primary' @click='root.route("MakeSite")'/>
+        <MyButton label='Yes' variant='primary' @click='root.route("EditSite")'/>
     </DefaultWrapper>
 </template>
 

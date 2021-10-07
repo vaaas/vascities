@@ -21,35 +21,31 @@
         min-height: 100vh;
     }
 
-    .w100 { width: 100%; }
-
-    .center { text-align: center; }
-
-    .doublecenter {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .fullh { height: 100vh; }
-
-    input, textarea {
+    input {
         font-size: 1rem;
         padding: 0.25rem 0.5rem;
         width: 100%;
     }
 
-    textarea { height: 10ex; }
+    textarea {
+        font-size: 1rem;
+        padding: 0.25rem 0.5rem;
+        width: 100%;
+        height: 10ex;
+    }
+
+    .flex { display: flex; }
+    .flex.end { justify-contents: flex-end; }
 </style>
 
 <script>
     import Index from './Index.vue'
-    import MakeSite from './MakeSite.vue'
+    import EditSite from './EditSite.vue'
 
     export default {
         components: {
             Index,
-            MakeSite,
+            EditSite,
         },
 
         data() { return {

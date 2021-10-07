@@ -1,7 +1,16 @@
 <template>
-    <div class='doublecenter fullh'>
-        <div>
+    <div class='defaultwrapper'>
+        <section class='contents'>
             <slot/>
-        </div>
+        </section>
     </div>
 </template>
+
+<style>
+    .defaultwrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+</style>
