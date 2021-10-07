@@ -8,4 +8,4 @@ mix.webpackConfig({
         },
     },
 })
-mix.js('src/index.js', 'dist/main.js').vue()
+mix.js('src/index.js', 'preload.js').vue()
