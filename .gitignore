@@ -2,3 +2,6 @@ node_modules
 preload.js
 package-lock.json
 mix-manifest.json
+index.html
+index.js
+src
