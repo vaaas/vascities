@@ -27,8 +27,15 @@ You are expected to pass the site object as the `value` prop, then use the compo
                 :timestamp='post.timestamp'
                 :filename='post.filename ?? ""'
                 :tag='post.tag'
-                :state='post.state'/>
+                :skip='post.skip'/>
         </posts>
+
+        <pages>
+            <page v-for='page in value.pages'
+                v-html='page.contents'
+                :timestamp='page.timestamp'
+                :filename='page.filename'/>
+        </pages>
     </site>
 </template>
 ```

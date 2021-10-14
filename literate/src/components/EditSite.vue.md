@@ -48,16 +48,12 @@ This component lets the user edit or create a site. Through the `value` prop, we
         </LabelForm>
 
         <LabelForm label='Icon' flex='3'>
-            <input v-model='value_copy.icon'/>
-
-            <div class='flex'>
-                <MyButton label='Select' @click='icon_select'/>
-            </div>
+            <input type='file' accept='image/png, image/jpeg' @change='x => value_copy.icon = x.target.files[0].path'/>
         </LabelForm>
 
         <div class='flex end'>
             <MyButton variant='primary'
-                @click='update ? update_site : create_site'
+                @click='() => update ? update_site() : create_site()'
                 :label='update ? "Update" : "Create"'/>
         </div>
     </DefaultWrapper>
@@ -92,7 +88,7 @@ This component lets the user edit or create a site. Through the `value` prop, we
         },
 
         computed: {
-            update() { return value !== null },
+            update() { return this.value !== null },
         },
 
         data() { return {
@@ -104,26 +100,16 @@ This component lets the user edit or create a site. Through the `value` prop, we
                 blurb: '',
                 links: [],
                 posts: [],
-                langs,
+                pages: [],
             },
+            langs: Object.entries(langs).map(x => ({ text: x[0], value: x[1] })),
         }},
 
         methods: {
             update_site() {},
 
-            create_site() {},
-
-            icon_select() {
-                const pathnames = electron.dialog.showOpenDialogSync({
-                    title: 'Select an icon file',
-                    filters: [
-                        { name: 'Images', extensions: ['jpg', 'jpeg', 'png', 'gif'] },
-                        { name: 'All Files', extensions: ['*'] }
-                    ],
-                    properties: [ 'openFile' ],
-                })
-                if (!pathnames) return
-                this.value_copy.icon = pathnames[0]
+            create_site() {
+                console.log(this.value_copy)
             },
         },
     }

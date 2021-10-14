@@ -9,10 +9,18 @@ MySelect is an HTML select dropdown select, but its options are defined through 
 
 ```html
 <template>
-    <select class='myselect' :value='value' @input='$emit("update:modelValue", $event.target.value)'>
-        <option v-for='option in options' :value='option.value'>{{ option.label }}</option>
+    <select class='myselect' :value='modelValue' @input='$emit("update:modelValue", $event.target.value)'>
+        <option v-for='option in options' :value='option.value'>{{ option.text }}</option>
     </select>
 </template>
+```
+
+```css
+<style>
+	.myselect {
+		padding: 0.5rem;
+	}
+</style>
 ```
 
 ```javascript

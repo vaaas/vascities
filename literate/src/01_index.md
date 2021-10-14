@@ -10,7 +10,6 @@ We load the root Vue module and also helper functions. Then we mount Vue on the 
 self.fs = window.require('fs')
 self.os = window.require('os')
 self.path = window.require('path')
-self.electron = window.require('electron')
 
 self.Vue = require('vue')
 require('./helpers.js')
