@@ -8,7 +8,7 @@ This is the first component the user sees when the application is loaded. It pre
 </template>
 ```
 
-```javsacript
+```javascript
 <script>
     import NoSites from './NoSites.vue'
 
