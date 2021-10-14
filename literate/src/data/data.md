@@ -1,3 +1,12 @@
+## Data
+
+These are various data files.
+
+### Languages
+
+These map language names to language codes.
+
+```javascript src/data/lang.js
 export default  {
     'Afrikaans': 'af',
     'Albanian': 'sq',
@@ -125,3 +134,4 @@ export default  {
     'Yiddish': 'ji',
     'Zulu': 'zu',
 }
+```
