@@ -1,3 +1,19 @@
+### Modal
+
+A modal (popup) window, defined in HTML.
+
+Props:
+
+* title: String. The modal's title.
+* buttons: Array[String]. Buttons that will be shown, if any. Can contain "cancel", "confirm"
+* size: Modal window's horizontal size. Changes its class.
+
+Slots:
+
+* default slot: the modal's contents (body)
+
+
+```html
 <template>
     <div :class='class'>
         <div class='content'>
@@ -14,7 +30,9 @@
         </div>
     </div>
 </template>
+```
 
+```css
 <style>
     .modal {
         position: fixed;
@@ -57,7 +75,9 @@
         gap: 0.25rem;
     }
 </style>
+```
 
+```javascript
 <script>
     import MyButton from './MyButton.vue'
 
@@ -79,3 +99,4 @@
         },
     }
 </script>
+```

@@ -1,7 +1,14 @@
+### Index
+
+This is the first component the user sees when the application is loaded. It presents the user with a list of sites, or a prompt to create a site.
+
+```html
 <template>
     <NoSites v-if='sites.length === 0' :root='root'/>
 </template>
+```
 
+```javsacript
 <script>
     import NoSites from './NoSites.vue'
 
@@ -21,3 +28,4 @@
         },
     }
 </script>
+```

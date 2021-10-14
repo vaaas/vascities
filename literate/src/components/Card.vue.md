@@ -1,5 +1,8 @@
 ### Card
 
+A nice card, with a border and lighter background. Useful for presenting articles.
+
+```html
 <template>
     <div class='card'>
         <header v-if='title'>
@@ -11,7 +14,9 @@
         </section>
     </div>
 </template>
+```
 
+```css
 <style>
     .card {
         background: #fff;
@@ -35,7 +40,9 @@
         border-bottom: 4px solid var(--border-colour);
     }
 </style>
+```
 
+```javascript
 <script>
     export default {
         props: {
@@ -43,3 +50,4 @@
         },
     }
 </script>
+```

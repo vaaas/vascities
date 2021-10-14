@@ -1,3 +1,8 @@
+### LabelForm
+
+A simple label with an attached input. Useful in forms.
+
+```html
 <template>
     <fieldset class='labelform'>
         <label>{{ label }}</label>
@@ -6,7 +11,9 @@
         </div>
     </fieldset>
 </template>
+```
 
+```css
 <style>
     .labelform {
         display: flex;
@@ -15,7 +22,9 @@
 
     .labelform > * { flex: 1; }
 </style>
+```
 
+```javascript
 <script>
     export default {
         props: {
@@ -30,3 +39,4 @@
         },
     }
 </script>
+```

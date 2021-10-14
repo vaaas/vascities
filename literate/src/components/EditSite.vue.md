@@ -1,3 +1,8 @@
+### EditSite
+
+This component lets the user edit or create a site. Through the `value` prop, we can determine if the user is editing or creating a site.
+
+```html
 <template>
     <DefaultWrapper class='editsite'>
         <LabelForm label='User Name' flex='3'>
@@ -57,11 +62,15 @@
         </div>
     </DefaultWrapper>
 </template>
+```
 
+```css
 <style scoped>
     .editsite > .contents > * { min-width: 30rem; }
 </style>
+```
 
+```javascript
 <script>
     import LabelForm from './LabelForm.vue'
     import DefaultWrapper from './DefaultWrapper.vue'
@@ -119,3 +128,4 @@
         },
     }
 </script>
+```
