@@ -13,7 +13,7 @@ This is the component that is presented to the user when there are no sites foun
 
 ```javascript
 <script>
-    import DefaultWrapper from './DefaultWrapper'
+    import DefaultWrapper from './DefaultWrapper.vue'
     import MyButton from './MyButton.vue'
     import Card from './Card.vue'
 

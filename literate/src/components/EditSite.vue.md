@@ -51,7 +51,7 @@ This component lets the user edit or create a site. Through the `value` prop, we
             <input v-model='value_copy.icon'/>
 
             <div class='flex'>
-                <MyButton label='Select' @click='icon_select'>
+                <MyButton label='Select' @click='icon_select'/>
             </div>
         </LabelForm>
 
@@ -95,7 +95,7 @@ This component lets the user edit or create a site. Through the `value` prop, we
             update() { return value !== null },
         },
 
-        data() {
+        data() { return {
             value_copy: this.value ?? {
                 username: '',
                 sitename: '',
@@ -106,7 +106,7 @@ This component lets the user edit or create a site. Through the `value` prop, we
                 posts: [],
                 langs,
             },
-        },
+        }},
 
         methods: {
             update_site() {},

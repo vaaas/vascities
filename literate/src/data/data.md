@@ -6,7 +6,7 @@ These are various data files.
 
 These map language names to language codes.
 
-```javascript src/data/lang.js
+```javascript src/data/langs.js
 export default  {
     'Afrikaans': 'af',
     'Albanian': 'sq',
