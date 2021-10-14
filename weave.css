@@ -1,0 +1,19 @@
+html {
+	background: #eee;
+	font-size: 20px;
+}
+
+body {
+	padding: 1rem;
+	margin: auto;
+	max-width: 50rem;
+	line-height: 1.5rem;
+}
+
+pre {
+	background: white;
+	color: #844;
+	padding: 0.5rem;
+}
+
+code { white-space: pre-wrap; }
