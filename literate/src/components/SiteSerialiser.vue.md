@@ -1,3 +1,10 @@
+###  SiteSerialiser
+
+We store site data in site.xml, within each site's directory. It's then parsed into a Javascript object. This component uses a Vue template to serialise the Javascript object back into an XML file.
+
+You are expected to pass the site object as the `value` prop, then use the component's mounted element's `outerHTML` property.
+
+```html
 <template>
     <site>
         <username>{{ value.username }}</username>
@@ -24,7 +31,9 @@
         </posts>
     </site>
 </template>
+```
 
+```javascript
 <script>
     export default {
         props: {
@@ -38,3 +47,4 @@
         },
     }
 </script>
+```

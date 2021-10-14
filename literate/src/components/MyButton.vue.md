@@ -1,9 +1,16 @@
+### MyButton
+
+This is a button with a label. It accepts a prop, `variant`, which changes the looks of the button.
+
+```html
 <template>
     <button :class='class'>
         {{ label }}
     </button>
 </template>
+```
 
+```css
 <style>
     .mybutton {
         padding: 0.5rem 1rem;
@@ -26,7 +33,9 @@
         background: var(--primary-light);
     }
 </style>
+```
 
+```javascript
 <script>
     export default {
         props: {
@@ -41,3 +50,4 @@
         },
     }
 </script>
+```
