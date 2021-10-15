@@ -56,6 +56,8 @@ This component lets the user edit or create a site. Through the `value` prop, we
                 @click='() => update ? update_site() : create_site()'
                 :label='update ? "Update" : "Create"'/>
         </div>
+
+        <SiteSerialiser ref='serialiser' :value='value_copy' />
     </DefaultWrapper>
 </template>
 ```
@@ -67,12 +69,14 @@ This component lets the user edit or create a site. Through the `value` prop, we
 ```
 
 ```javascript
+
 <script>
     import LabelForm from './LabelForm.vue'
     import DefaultWrapper from './DefaultWrapper.vue'
     import MyButton from './MyButton.vue'
     import MySelect from './MySelect.vue'
     import langs from '../data/langs.js'
+	 import SiteSerialiser from './SiteSerialiser.vue'
 
     export default {
         components: {
@@ -80,6 +84,7 @@ This component lets the user edit or create a site. Through the `value` prop, we
             DefaultWrapper,
             MyButton,
             MySelect,
+            SiteSerialiser,
         },
 
         props: {
@@ -89,6 +94,14 @@ This component lets the user edit or create a site. Through the `value` prop, we
 
         computed: {
             update() { return this.value !== null },
+
+            valid() {
+                return
+                    this.value_copy.username.length > 0 &&
+                    this.value_copy.sitename.length > 0 &&
+                    this.value_copy.author.length > 0 &&
+                    this.value_copy.lang.length > 0
+            },
         },
 
         data() { return {
@@ -101,15 +114,32 @@ This component lets the user edit or create a site. Through the `value` prop, we
                 links: [],
                 posts: [],
                 pages: [],
+                icon: '',
             },
             langs: Object.entries(langs).map(x => ({ text: x[0], value: x[1] })),
         }},
 
         methods: {
-            update_site() {},
+            update_site() {
+                fs.mkdirSync(path.join(this.root.rootdir, this.value_copy.sitename))
+                fs.mkdirSync(path.join(this.root.rootdir, this.value_copy.sitename, 'render'))
+                if (this.value_copy.icon.length && this.value_copy.icon.length > 0 && !this.value_copy.icon.startsWith('icon')) {
+	                fs.copy(this.value_copy.icon, path.join(this.root.rootdir, this.value_copy.sitename, 'render', 'icon' + path.extname(this.value_copy.icon)))
+                    this.value_copy.icon = 'icon' + path.extname(this.value_copy.icon)
+		        }
+                fs.writeFileSync(path.join(this.root.rootdir, this.value_copy.sitename, 'site.xml'), this.$refs.serialiser.$el.innerHTML)
+                this.root.route('Index')
+			},
 
             create_site() {
-                console.log(this.value_copy)
+                fs.mkdirSync(path.join(this.root.rootdir, this.value_copy.sitename))
+                fs.mkdirSync(path.join(this.root.rootdir, this.value_copy.sitename, 'render'))
+                if (this.value_copy.icon.length && this.value_copy.icon.length > 0) {
+	                fs.copy(this.value_copy.icon, path.join(this.root.rootdir, this.value_copy.sitename, 'render', 'icon' + path.extname(this.value_copy.icon)))
+                    this.value_copy.icon = 'icon' + path.extname(this.value_copy.icon)
+		        }
+                fs.writeFileSync(path.join(this.root.rootdir, this.value_copy.sitename, 'site.xml'), this.$refs.serialiser.$el.innerHTML)
+                this.root.route('Index')
             },
         },
     }

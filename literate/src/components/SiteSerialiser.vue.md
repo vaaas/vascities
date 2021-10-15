@@ -6,37 +6,39 @@ You are expected to pass the site object as the `value` prop, then use the compo
 
 ```html
 <template>
-    <site>
-        <username>{{ value.username }}</username>
+	<div class='invisible'>
+		<site>
+			<username>{{ value.username }}</username>
 
-        <sitename>{{ value.sitename }}</sitename>
+			<sitename>{{ value.sitename }}</sitename>
 
-        <author>{{ value.author }}</author>
+			<author>{{ value.author }}</author>
 
-        <lang>{{ value.language }}</lang>
+			<lang>{{ value.language }}</lang>
 
-        <blurb v-html='value.blurb'/>
+			<blurb v-html='value.blurb'/>
 
-        <links>
-            <a v-for='link in value.links' :href='link.target'>{{ link.text }}</a>
-        </links>
+			<links>
+				<a v-for='link in value.links' :href='link.target'>{{ link.text }}</a>
+			</links>
 
-        <posts>
-            <post v-for='post in value.posts'
-                v-html='post.contents'
-                :timestamp='post.timestamp'
-                :filename='post.filename ?? ""'
-                :tag='post.tag'
-                :skip='post.skip'/>
-        </posts>
+			<posts>
+				<post v-for='post in value.posts'
+					v-html='post.contents'
+					:timestamp='post.timestamp'
+					:filename='post.filename ?? ""'
+					:tag='post.tag'
+					:skip='post.skip'/>
+			</posts>
 
-        <pages>
-            <page v-for='page in value.pages'
-                v-html='page.contents'
-                :timestamp='page.timestamp'
-                :filename='page.filename'/>
-        </pages>
-    </site>
+			<pages>
+				<page v-for='page in value.pages'
+					v-html='page.contents'
+					:timestamp='page.timestamp'
+					:filename='page.filename'/>
+			</pages>
+		</site>
+	</div>
 </template>
 ```
 

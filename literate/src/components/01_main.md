@@ -53,6 +53,7 @@ We don't use a central css file. Instead, every component defines its own styles
 
     .flex { display: flex; }
     .flex.end { justify-contents: flex-end; }
+	.invisible { visibility: hidden; }
 </style>
 ```
 
